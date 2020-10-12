@@ -1,0 +1,23 @@
+.form-Container {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 70vh;
+}
+.form-edit {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: "50px auto ";
+  border-radius: 10px;
+  padding: "50px";
+}
+#card-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 50vh;
+  border-radius: 2px;
+  margin-top: -4vh;
+  padding: 20px;
+  color: white;
+  align-content: center;
+  padding: "20px";
+}
+.editContent {
+  display: none;
+}

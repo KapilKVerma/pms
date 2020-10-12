@@ -1,0 +1,38 @@
+.contactme-content {
+  height: 84vh;
+  text-align: start;
+  padding: 10%;
+}
+
+.contactme-text {
+  border-width: 1px;
+  border-color: #d5dbdb;
+  border-style: solid;
+  margin-right: 25%;
+  padding: 10%;
+  font-size: 15px;
+  background-color: #d5dbdb;
+}
+.contactme-column-show {
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  .contactme-column-show {
+    display: none;
+  }
+
+  .contactme-content {
+    margin: 0;
+    padding: 30px;
+  }
+  .contactme-text {
+    padding: 0px;
+    margin: 0px;
+  }
+  .contactme-text {
+    padding: 10px;
+    font-size: 12px;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,16 @@
+.body {
+  overflow: hidden;
+}
+.logo {
+  font-family: Lobster;
+  font-size: 40px;
+  margin-left: 50px;
+  background-color: black;
+  width: 80%;
+  color: #d5dbdb;
+  text-align: center;
+}
+
+.link {
+  color: black;
+}

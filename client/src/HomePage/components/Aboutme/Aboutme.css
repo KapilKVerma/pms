@@ -1,0 +1,34 @@
+.aboutme-content {
+  height: 84vh;
+  text-align: start;
+  padding: 10%;
+  width: 50%;
+}
+
+.aboutme-text {
+  border-width: 1px;
+  border-color: #d5dbdb;
+  border-style: solid;
+  margin-left: 30%;
+  padding: 10%;
+  font-size: 15px;
+  background-color: #d5dbdb;
+}
+.aboutme-body {
+  display: inline;
+}
+
+.aboutme-column-show {
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  .column-show {
+    display: none;
+  }
+
+  .aboutme-text {
+    margin: 0;
+    padding: 30px;
+  }
+}

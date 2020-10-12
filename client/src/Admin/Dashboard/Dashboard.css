@@ -1,0 +1,28 @@
+.displayPane {
+  display: none;
+}
+.card {
+  border-width: 0px;
+  border-color: #d5dbdb;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+width ::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #aaa;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #282828;
+  border-radius: 10px;
+}
+
+.Show-Form {
+  opacity: 0;
+}

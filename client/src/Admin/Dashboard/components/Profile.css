@@ -1,0 +1,20 @@
+.personaldetails-form {
+  color: #3f4141;
+  position: absolute;
+}
+
+.background-images {
+  width: 70%;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+}
+
+.row-style {
+  background-color: #ececec;
+  margin: 2px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+}
