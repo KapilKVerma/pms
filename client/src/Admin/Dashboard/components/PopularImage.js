@@ -35,7 +35,7 @@ const PopularImage = () => {
       {popularImage ? (
         <Card
           style={{
-            backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/images/${popularImage.url})`,
+            backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/images/${popularImage.url}")`,
             backgroundPosition: "top",
             backgroundSize: "cover",
             color: "white",

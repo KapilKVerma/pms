@@ -76,8 +76,11 @@ const Message = (props) => {
       {message && (
         <Modal centered show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title style={{ fontSize: "20px" }}>
+            <Modal.Title style={{ fontSize: "16px" }}>
               From: {message.name}
+              <div style={{ fontSize: "12px" }}>
+                {message.date} | {message.time}
+              </div>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>{message.message}</Modal.Body>

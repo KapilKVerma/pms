@@ -17,7 +17,7 @@ const EditImage = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [imageId, deleteImage]);
+  }, [imageId, deleteImage, setDeleteImage]);
 
   // Delete Image
   const handleImageDelete = (id) => {
@@ -43,7 +43,7 @@ const EditImage = (props) => {
           className="shadow"
           style={{
             height: "70vh",
-            backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/images/${image.url})`,
+            backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/images/${image.url}")`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

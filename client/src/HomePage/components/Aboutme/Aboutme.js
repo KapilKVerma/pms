@@ -19,7 +19,7 @@ const Aboutme = () => {
       <Navigation page={"About Me"} />
       <Card
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/user-images/${image})`,
+          backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/user-images/${image}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

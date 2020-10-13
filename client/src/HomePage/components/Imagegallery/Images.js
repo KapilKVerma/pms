@@ -46,7 +46,7 @@ const Images = (props) => {
           <div
             className="photoshoot-image"
             style={{
-              backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/images/${image.url})`,
+              backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/images/${image.url}")`,
             }}
             onClick={handleShow}
           />

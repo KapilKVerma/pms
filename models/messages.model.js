@@ -6,6 +6,8 @@ const messagesSchema = new mongoose.Schema(
     email: String,
     contactnumber: String,
     message: String,
+    date: String,
+    time: String,
   },
   { timestamps: true }
 );

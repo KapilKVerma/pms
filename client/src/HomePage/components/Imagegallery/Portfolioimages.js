@@ -34,7 +34,7 @@ const Portfolioimages = ({ match }) => {
                 style={{
                   height: "80vh",
                   backgroundColor: "black",
-                  backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/photoshoots/${portfolio.url})`,
+                  backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/photoshoots/${portfolio.url}")`,
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                   overflow: "hidden",
@@ -71,7 +71,7 @@ const Portfolioimages = ({ match }) => {
                     {portfolio.name}
                   </div>
                   <div style={{ fontSize: "20px" }}>
-                    {Date().slice(4, 16)}
+                    {portfolio.date}
                     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;NISHA SHARMA
                   </div>
                 </div>

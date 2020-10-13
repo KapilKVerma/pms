@@ -4,6 +4,7 @@ const photoshootsSchema = new mongoose.Schema({
   name: String,
   url: String,
   views: Number,
+  date: String,
   images: [
     {
       type: mongoose.Schema.Types.ObjectId,

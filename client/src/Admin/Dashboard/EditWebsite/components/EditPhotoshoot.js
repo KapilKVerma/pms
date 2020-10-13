@@ -82,6 +82,7 @@ const EditPhotoshoot = (props) => {
       .post(`${process.env.REACT_APP_BACKEND}/images/add`, data)
       .then((res) => {
         handleImageModalClose();
+        setImageCreate(true);
       })
       .catch((err) => {
         console.log(err);
@@ -93,7 +94,7 @@ const EditPhotoshoot = (props) => {
       className="shadow"
       style={{
         height: "70vh",
-        backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/photoshoots/${props.photoshoot.url})`,
+        backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/photoshoots/${props.photoshoot.url}")`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",

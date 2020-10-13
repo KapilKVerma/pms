@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Images = require("../models/images.model");
 const Photoshoots = require("../models/photoshoots.model");
 const multer = require("multer");
+const fs = require("fs");
 
 // == Multer configuration ==
 const storage = multer.diskStorage({
@@ -90,8 +91,16 @@ router.route("/:id/delete").post((req, res) => {
 
   Images.findByIdAndDelete(req.params.id, (err, image) => {
     if (err) res.json(err);
-    else console.log("Image Deleted!");
-    res.json("Image Deleted");
+    else {
+      try {
+        const imagePath = "./public/images/" + image.url;
+        fs.unlinkSync(imagePath);
+      } catch (err) {
+        console.log(err);
+      }
+      console.log("Image Deleted!");
+      res.json("Image Deleted");
+    }
   });
 
   Photoshoots.findById(photoshootId, (err, photoshoot) => {

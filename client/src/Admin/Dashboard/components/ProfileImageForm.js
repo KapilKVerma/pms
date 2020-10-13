@@ -64,7 +64,7 @@ const ProfileImageForm = (props) => {
               backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/user-images/${modelDetails.homeimage}")`,
               width: "100%",
             }}
-          ></div>
+          />
         </Col>
       </Row>
       <Row className="row-style">

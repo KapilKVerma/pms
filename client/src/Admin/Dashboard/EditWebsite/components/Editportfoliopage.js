@@ -8,6 +8,7 @@ const Editaboutmepage = () => {
   const [newPhotoshoot, setNewPhotoshoot] = useState({
     name: "",
     url: "",
+    date: "",
   });
   const [photoshoots, setPhotoshoots] = useState();
   const [photoshootCreate, setPhotoshootCreate] = useState(false);
@@ -32,14 +33,19 @@ const Editaboutmepage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const date = new Date();
+
   // Creating Photoshoot
   const handlePhotshootCreate = () => {
     if (!newPhotoshoot.url)
       alert("Photshoot's image is not selected!. Try again");
+
     const photoshootData = new FormData();
     photoshootData.append("name", newPhotoshoot.name);
     photoshootData.append("url", newPhotoshoot.url);
+    photoshootData.append("date", date.toDateString().slice(0, 10));
 
+    console.log(photoshootData);
     axios
       .post(`${process.env.REACT_APP_BACKEND}/photoshoots/add`, photoshootData)
       .then((res) => {

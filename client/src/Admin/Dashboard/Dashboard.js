@@ -17,6 +17,7 @@ import PopularImage from "./components/PopularImage";
 import PopularPhotoshoot from "./components/PopularPhotoshoot";
 import ImagesSatistics from "./components/ImagesStatistics";
 import PhotoshootsStatistics from "./components/PhotoshootsStatistics";
+import ImagesAll from "./EditWebsite/components/ImagesAll";
 
 import { UserContext } from "../../App";
 import fire from "../../fire";
@@ -120,6 +121,18 @@ const Dashboard = () => {
                     }}
                   >
                     <i className="fas fa-pen-square p-1"></i> Photoshoots
+                  </Nav.Link>
+                </Nav.Item>
+
+                <Nav.Item>
+                  <Nav.Link
+                    eventKey="fourth"
+                    style={{
+                      borderRadius: "0px",
+                      color: "white",
+                    }}
+                  >
+                    <i className="fas fa-images p-1"></i> Images
                   </Nav.Link>
                 </Nav.Item>
 
@@ -273,6 +286,10 @@ const Dashboard = () => {
 
             <Tab.Pane eventKey="third">
               <Editwebsite />
+            </Tab.Pane>
+
+            <Tab.Pane eventKey="fourth">
+              <ImagesAll />
             </Tab.Pane>
           </Tab.Content>
         </Col>

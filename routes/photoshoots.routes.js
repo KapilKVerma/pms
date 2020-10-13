@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const Photoshoots = require("../models/photoshoots.model");
 const UserDetails = require("../models/userdetails.model");
+const Images = require("../models/images.model");
 const multer = require("multer");
+const fs = require("fs");
 
 // == Multer configuration ==
 const storage = multer.diskStorage({
@@ -69,6 +71,7 @@ router.route("/add").post(upload.single("url"), (req, res) => {
   const photoshoot = {
     name: req.body.name,
     url: req.file.fieldname + "-" + req.file.originalname,
+    date: req.body.date,
     views: "",
   };
   Photoshoots.create(photoshoot, (err, photoshoot) => {
@@ -108,12 +111,40 @@ router.route("/:id/update").post(upload.single("url"), (req, res) => {
 router.route("/:id/delete").post((req, res) => {
   const userId = "5f6a74001592160b60c1903e";
   const photoshootId = req.params.id;
+  console.log(photoshootId);
+  Photoshoots.findById(photoshootId, (err, photoshoot) => {
+    if (err) res.status(400).json("Error:" + err);
+    else {
+      if (photoshoot.images) {
+        const photoshootImages = photoshoot.images;
+        photoshootImages.map((photoshootImage) => {
+          return Images.findByIdAndDelete(photoshootImage, (err, image) => {
+            if (err) {
+              res.status(400).json("Error:" + err);
+            } else {
+              try {
+                const imagePath = "./public/images/" + image.url;
+                fs.unlinkSync(imagePath);
+              } catch (err) {
+                console.log(err);
+              }
+            }
+          });
+        });
+      }
+    }
+  });
 
   Photoshoots.findByIdAndDelete(photoshootId, (err, photoshoot) => {
     if (err) {
       res.status(400).json("Error:" + err);
     } else {
-      console.log("Photoshoot Deleted");
+      try {
+        const photoshootPath = "./public/photoshoots/" + photoshoot.url;
+        fs.unlinkSync(photoshootPath);
+      } catch (err) {
+        console.log(err);
+      }
       res.json("Photoshoot Deleated");
     }
   });
@@ -121,11 +152,9 @@ router.route("/:id/delete").post((req, res) => {
   UserDetails.findById(userId, (err, details) => {
     if (err) console.log(err);
     else {
-      console.log(details.photoshoots);
       details.photoshoots = details.photoshoots.filter((value) => {
         return value != photoshootId;
       });
-      console.log(details.photoshoots);
       details.save();
     }
   });

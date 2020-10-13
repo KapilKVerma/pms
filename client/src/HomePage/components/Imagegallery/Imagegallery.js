@@ -39,7 +39,7 @@ const Imagegallery = () => {
                   className="p-0 m-0"
                   key={photoshoot._id}
                   style={{
-                    backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/photoshoots/${photoshoot.url})`,
+                    backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/photoshoots/${photoshoot.url}")`,
                   }}
                 >
                   <Photoshoot photoshoot={photoshoot} />

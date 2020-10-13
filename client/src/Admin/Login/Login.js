@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${process.env.REACT_APP_ASSETS_IMAGES}/user-images/${model.homeimage})`,
+        backgroundImage: `url("${process.env.REACT_APP_ASSETS_IMAGES}/user-images/${model.homeimage}")`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -49,7 +49,6 @@ const Login = () => {
             fontSize: "40px",
             color: "#d5dbdb",
             margin: "5px",
-            // display: "absolute",
             position: "fixed",
             top: "0",
           }}

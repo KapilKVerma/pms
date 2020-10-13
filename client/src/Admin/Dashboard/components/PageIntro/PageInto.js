@@ -7,10 +7,6 @@ const PageInto = (props) => {
       <Jumbotron
         className="shadow"
         style={{
-          backgroundImage:
-            "url(https://www.kokopelli-blog.org/wp-content/uploads/2018/12/modeling-agency.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           borderRadius: "0px",
           margin: "0px",
           padding: "0px",
